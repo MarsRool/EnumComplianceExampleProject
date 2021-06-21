@@ -6,7 +6,7 @@ namespace employee
 
 PersonType Police::get_type() const noexcept
 {
-    return PersonType::Police;
+    return PersonTypeComplianceDeclarator::getType<std::decay_t<decltype(*this)>>;
 }
 
 } // namespace employee

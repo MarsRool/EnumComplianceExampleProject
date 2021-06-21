@@ -51,6 +51,33 @@ TEST(PersonTest, PersonComplianceStaticTest)
 			void>();
 }
 
+TEST(PersonTest, PersonReverseComplianceStaticTest)
+{
+    static_assert(PersonTypeComplianceDeclarator::getType<Person> == PersonType::Count,
+            "Uncpecified classes should correspond to Count Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<class NonExistent> == PersonType::Count,
+            "Uncpecified classes should correspond to Count Enum element");
+
+    static_assert(PersonTypeComplianceDeclarator::getType<Employee> == PersonType::Employee,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Engeneer> == PersonType::Engeneer,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Artist> == PersonType::Artist,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Astronaut> == PersonType::Astronaut,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Chef> == PersonType::Chef,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<ConstructionWorker> == PersonType::ConstructionWorker,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Firefighter> == PersonType::Firefighter,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Doctor> == PersonType::Doctor,
+            "Specified class should correspond to Enum element");
+    static_assert(PersonTypeComplianceDeclarator::getType<Police> == PersonType::Police,
+            "Specified class should correspond to Enum element");
+}
+
 TEST(PersonTest, PersonTest)
 {
     auto employee = PersonFactory::instance().create<PersonType::Employee>();
@@ -76,5 +103,6 @@ TEST(PersonTest, PersonTest)
 void start_tests()
 {
     PersonTest_PersonComplianceStaticTest();
+    PersonTest_PersonReverseComplianceStaticTest();
     PersonTest_PersonTest();
 }

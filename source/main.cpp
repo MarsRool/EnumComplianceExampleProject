@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "tests.h"
+#include "test.h"
 
 int main()
 {

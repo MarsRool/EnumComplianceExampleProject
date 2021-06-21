@@ -6,7 +6,7 @@ namespace employee
 
 PersonType Firefighter::get_type() const noexcept
 {
-    return PersonType::Firefighter;
+    return PersonTypeComplianceDeclarator::getType<std::decay_t<decltype(*this)>>;
 }
 
 } // namespace employee

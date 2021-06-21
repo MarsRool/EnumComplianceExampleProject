@@ -35,11 +35,17 @@ struct EnumComplianceDeclaratorIter
 		EnumComplianceDeclaratorIter<EnumType, _size, _size, void, void>>;
 	using Compliance = EnumClassCompliance<EnumType, e, Arg>;
 	using Class = typename Compliance::Class;
+
 	template<EnumType E>
 	using getClass = std::conditional_t<
 		E == e,
 		Class,
 		typename Base::template getClass<E>>;
+
+    template<typename T>
+    static constexpr EnumType getType = std::is_same_v<Class, T>
+        ? e
+        : Base::template getType<T>;
 };
 
 template <typename EnumType, std::size_t _size>
@@ -47,6 +53,9 @@ struct EnumComplianceDeclaratorIter<EnumType, _size, _size, void, void>
 {
 	template<EnumType E>
 	using getClass = void;
+
+    template<typename T>
+    static constexpr EnumType getType = static_cast<EnumType>(_size);
 };
 
 template <typename EnumType, typename ...Args>
@@ -62,8 +71,11 @@ struct EnumComplianceDeclarator
 
 	using Base = EnumComplianceDeclaratorIter<
 		EnumType, 0, static_cast<std::size_t>(EnumType::Count), Args...>;
+
 	template<EnumType E>
 	using getClass = typename Base::template getClass<E>;
+    template<typename T>
+    static constexpr EnumType getType = Base::template getType<T>;
 };
 
 } //common
