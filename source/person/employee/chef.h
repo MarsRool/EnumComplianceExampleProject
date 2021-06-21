@@ -8,6 +8,8 @@ class Chef: public Employee
 {
 public:
     Chef() = default;
+
+    virtual PersonType get_type() const noexcept override;
 };
 
 } // namespace employee

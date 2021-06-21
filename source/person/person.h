@@ -15,6 +15,8 @@ public:
     template <PersonType E, typename T>
 	std::shared_ptr<T> upcast();
 
+    virtual PersonType get_type() const noexcept = 0;
+
 protected:
 	template <typename DerivedT>
 	std::shared_ptr<DerivedT> shared_from_base();

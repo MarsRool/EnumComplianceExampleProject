@@ -4,4 +4,9 @@
 namespace employee
 {
 
+PersonType Chef::get_type() const noexcept
+{
+    return PersonType::Chef;
+}
+
 } // namespace employee

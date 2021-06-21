@@ -12,6 +12,8 @@ public:
     Employee(const Employee& other) = default;
     virtual ~Employee() override = default;
 
+    virtual PersonType get_type() const noexcept override;
+
 private:
     PersonContainer _childs;
     std::set<std::string> _childs_names;
