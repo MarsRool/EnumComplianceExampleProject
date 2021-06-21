@@ -54,4 +54,27 @@ TEST(PersonTest, PersonComplianceStaticTest)
 TEST(PersonTest, PersonTest)
 {
     auto employee = PersonFactory::instance().create<PersonType::Employee>();
+    Q_ASSERT(employee->get_type() == PersonType::Employee);
+    auto engeneer = PersonFactory::instance().create<PersonType::Engeneer>();
+    Q_ASSERT(engeneer->get_type() == PersonType::Engeneer);
+    auto artist = PersonFactory::instance().create<PersonType::Artist>();
+    Q_ASSERT(artist->get_type() == PersonType::Artist);
+    auto astronaut = PersonFactory::instance().create<PersonType::Astronaut>();
+    Q_ASSERT(astronaut->get_type() == PersonType::Astronaut);
+    auto chef = PersonFactory::instance().create<PersonType::Chef>();
+    Q_ASSERT(chef->get_type() == PersonType::Chef);
+    auto construction_worker = PersonFactory::instance().create<PersonType::ConstructionWorker>();
+    Q_ASSERT(construction_worker->get_type() == PersonType::ConstructionWorker);
+    auto firefighter = PersonFactory::instance().create<PersonType::Firefighter>();
+    Q_ASSERT(firefighter->get_type() == PersonType::Firefighter);
+    auto doctor = PersonFactory::instance().create<PersonType::Doctor>();
+    Q_ASSERT(doctor->get_type() == PersonType::Doctor);
+    auto police = PersonFactory::instance().create<PersonType::Police>();
+    Q_ASSERT(police->get_type() == PersonType::Police);
+}
+
+void start_tests()
+{
+    PersonTest_PersonComplianceStaticTest();
+    PersonTest_PersonTest();
 }

@@ -29,7 +29,8 @@ HEADERS += \
     source/person/person.h \
     source/person/person_factory.h \
     source/person/person_type.h \
-    source/pch.h
+    source/pch.h \
+    source/tests.h
 
 SOURCES += \
     source/person/employee/artist.cpp \

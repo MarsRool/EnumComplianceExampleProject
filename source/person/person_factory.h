@@ -2,11 +2,14 @@
 
 #include "person.h"
 #include <source/person/employee/employee.h>
-#include <source/person/employee/chef.h>
+#include <source/person/employee/artist.h>
 #include <source/person/employee/astronaut.h>
-#include <source/person/employee/firefighter.h>
-#include <source/person/employee/doctor.h>
+#include <source/person/employee/chef.h>
 #include <source/person/employee/construction_worker.h>
+#include <source/person/employee/doctor.h>
+#include <source/person/employee/engeneer.h>
+#include <source/person/employee/firefighter.h>
+#include <source/person/employee/police.h>
 
 namespace employee
 {
