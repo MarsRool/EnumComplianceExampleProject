@@ -1,1 +1,1 @@
-# EnumComplianceExampleProject
+EnumComplianceExampleProject
