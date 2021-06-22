@@ -105,4 +105,5 @@ void start_tests()
     PersonTest_PersonComplianceStaticTest();
     PersonTest_PersonReverseComplianceStaticTest();
     PersonTest_PersonTest();
+    qDebug() << "sizeof(PersonTypeComplianceDeclarator) " << sizeof(PersonTypeComplianceDeclarator);
 }

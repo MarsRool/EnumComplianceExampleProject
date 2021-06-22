@@ -14,3 +14,4 @@
 #include <bitset>
 
 #include <QObject>
+#include <QDebug>
